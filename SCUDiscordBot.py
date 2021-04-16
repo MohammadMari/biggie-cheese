@@ -8,7 +8,6 @@ from discord.ext.commands import MemberNotFound
 import random
 import asyncio
 import os
-from dotenv import load_dotenv
 import youtube_dl
 
 #role ID
