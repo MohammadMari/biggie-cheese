@@ -257,4 +257,4 @@ async def check(ctx,vc):
         await asyncio.sleep(30)
 
 
-client.run("ODMxMjQwODEzOTQwODM0MzQ1.YHSXVQ.ARTEzZ13l2NpybrexoXJe3dcl-U")
+client.run(os.environ['token'])
