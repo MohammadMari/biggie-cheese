@@ -55,9 +55,9 @@ async def study(ctx, Study=25, shortBreak=5, bigBreak=15):
     
     onGoingTimer = True
     # try:
-        client.loop.create_task(timer(ctx,Study, shortBreak, bigBreak, 0, 1, vc))
-        await ctx.send("Timer started!")
-        vc.play(discord.FFmpegPCMAudio(source="ring2.mp3"))
+    client.loop.create_task(timer(ctx,Study, shortBreak, bigBreak, 0, 1, vc))
+    await ctx.send("Timer started!")
+    vc.play(discord.FFmpegPCMAudio(source="ring2.mp3"))
     # except:
     #     await ctx.send("Something went wrong!")
 
