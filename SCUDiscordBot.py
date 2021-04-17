@@ -215,7 +215,7 @@ async def timer(ctx, studyCnt, sbreak, bbreak, cnt , bCnt, vc):
                 await ctx.send("Your {0} minute(s) break is over, Study time!".format(sbreak))
                 shortBreak = False
                 cnt = 0
-                vc.play(discord.FFmpegPCMAudio(executable="ffmpeg.exe", source="ring2.mp3"))
+                vc.play(discord.FFmpegPCMAudio(source="ring2.mp3"))
         elif longBreak:
             if cnt < (bbreak * 60):
                 await asyncio.sleep(1)
@@ -224,7 +224,7 @@ async def timer(ctx, studyCnt, sbreak, bbreak, cnt , bCnt, vc):
                 await ctx.send("Your {0} minute(s) break is over, Study time!".format(bbreak))
                 longBreak = False
                 cnt = 0
-                vc.play(discord.FFmpegPCMAudio(executable="ffmpeg.exe", source="ring2.mp3"))
+                vc.play(discord.FFmpegPCMAudio(source="ring2.mp3"))
         else:
             if cnt < (studyCnt* 60):
                 await asyncio.sleep(1)
@@ -234,13 +234,13 @@ async def timer(ctx, studyCnt, sbreak, bbreak, cnt , bCnt, vc):
                 shortBreak = True
                 cnt = 0
                 bCnt = bCnt + 1
-                vc.play(discord.FFmpegPCMAudio(executable="ffmpeg.exe", source="ring2.mp3"))
+                vc.play(discord.FFmpegPCMAudio(source="ring2.mp3"))
             else:
                 await ctx.send("{0} minute(s) has passed, Long break!".format(studyCnt))
                 longBreak = True
                 cnt = 0
                 bCnt = bCnt + 1
-                vc.play(discord.FFmpegPCMAudio(executable="ffmpeg.exe", source="ring2.mp3"))
+                vc.play(discord.FFmpegPCMAudio(source="ring2.mp3"))
 
 
 
