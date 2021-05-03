@@ -157,6 +157,25 @@ async def fuck_error(ctx, error):
         await ctx.send("I wasn't able to kick that user :(")
 
 
+@client.command(pass_context=True, help="bans the user you mentioned")
+@commands.has_permissions(ban_members=True)
+async def yeet(ctx, Member: discord.Member):
+    try:
+        await Member.ban()
+        await ctx.send("Cya bitch {0}".format(Member.mention))
+    except:
+        print("Ban failed")
+
+@yeet.error
+async def yeet_error(ctx, error):
+    if isinstance(error, MissingPermissions):
+        await ctx.send("You don't have permission to do that!")
+    elif isinstance(error, MemberNotFound):
+        await ctx.send("I wasn't able to find that user :(")
+    else:
+        await ctx.send("I wasn't able to ban that user :(")
+
+
 
 # @client.command(pass_context=True)
 # async def lofi(ctx):
